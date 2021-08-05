@@ -1,6 +1,7 @@
 module.exports = {
   extend: '@apostrophecms/widget-type',
   options: {
+    alias: 'link',
     label: 'Link'
   },
   fields: {
@@ -61,7 +62,7 @@ module.exports = {
           linkType: 'file'
         }
       },
-      custom: {
+      customUrl: {
         label: 'Custom URL',
         type: 'url',
         required: true,
@@ -74,5 +75,23 @@ module.exports = {
         type: 'boolean'
       }
     }
+  },
+  helpers (self) {
+    return {
+      linkPath (link) {
+        if (!link) {
+          return;
+        }
+        let path;
+        if (link.linkType === 'page' && link._linkPage && link._linkPage[0]) {
+          path = link._linkPage[0]._url;
+        } else if (link.linkType === 'file' && link._linkFile && link._linkFile[0]) {
+          path = link._linkFile[0]._url;
+        } else if (link.linkType === 'custom') {
+          path = link.customUrl;
+        }
+        return path;
+      }
+    };
   }
 };
