@@ -1,5 +1,3 @@
-// const schema = require('./lib/schema.js');
-
 module.exports = {
   extend: '@apostrophecms/widget-type',
   options: {
@@ -7,7 +5,6 @@ module.exports = {
   },
   fields: {
     add: {
-      // 👇 The first column area
       linkText: {
         label: 'Link Text',
         type: 'string',
