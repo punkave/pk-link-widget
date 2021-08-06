@@ -1,1 +1,1 @@
-# pk-link-widgets
+# pk-link-widget
