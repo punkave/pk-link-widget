@@ -1,0 +1,7 @@
+{% set link = data.widget %}
+{% set linkText = link.linkText %}
+{% set linkPath = apos.link.linkPath(link) %}
+
+<a href="{{ linkPath }}" {% if link.linkTarget %} target="_blank" rel="noopener noreferrer" {% endif %}>
+  {{ linkText }}
+</a>

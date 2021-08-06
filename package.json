@@ -1,5 +1,5 @@
 {
-  "name": "pk-link-widgets",
+  "name": "pk-link-widget",
   "version": "1.0.0",
   "description": "Link widgets for ApostropheCMS",
   "main": "index.js",
